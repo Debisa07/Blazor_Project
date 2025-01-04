@@ -2370,11 +2370,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/babi/Desktop/mike/blezor_project-main/DBExplorer.Web.csproj",
+      "projectUniqueName": "/home/babi/Desktop/Blazor_Project/DBExplorer.Web.csproj",
       "projectName": "DBExplorer.Web",
-      "projectPath": "/home/babi/Desktop/mike/blezor_project-main/DBExplorer.Web.csproj",
+      "projectPath": "/home/babi/Desktop/Blazor_Project/DBExplorer.Web.csproj",
       "packagesPath": "/home/babi/.nuget/packages/",
-      "outputPath": "/home/babi/Desktop/mike/blezor_project-main/obj/",
+      "outputPath": "/home/babi/Desktop/Blazor_Project/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/babi/.nuget/NuGet/NuGet.Config"

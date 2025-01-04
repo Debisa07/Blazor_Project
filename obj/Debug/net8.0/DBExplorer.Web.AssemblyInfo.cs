@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DBExplorer.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4add0b435f6ce7e92594e394734d94fa0b26616c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82f7785eb916b62101102d384f91379b9233992d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DBExplorer.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DBExplorer.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

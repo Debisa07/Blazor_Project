@@ -36,6 +36,11 @@ main {
         text-overflow: ellipsis;
     }
 
+.top-row .menu-context {
+    background-color: #f8f9fa; /* Change this to your desired color */
+    color: #343a40; /* Adjust text color if needed */
+}
+
 @media (max-width: 640.98px) {
     .top-row:not(.auth) {
         display: none;

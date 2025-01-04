@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NrWGAebruHvRAzhY2PGQGKZL8NYQxhvddUFtP7zG+yI=",
+  "Hash": "qY2CidMdasOVhNXD39+i5yP82m44cIsPuqX5oL1AV9c=",
   "Source": "DBExplorer.Web",
   "BasePath": "_content/DBExplorer.Web",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "DBExplorer.Web/wwwroot",
       "Source": "DBExplorer.Web",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/obj/Debug/net8.0/scopedcss/bundle/DBExplorer.Web.styles.css",
+      "Identity": "/home/babi/Desktop/Blazor_Project/obj/Debug/net8.0/scopedcss/bundle/DBExplorer.Web.styles.css",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Computed",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/obj/Debug/net8.0/scopedcss/bundle/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/obj/Debug/net8.0/scopedcss/bundle/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "DBExplorer.Web.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/home/babi/Desktop/mike/blezor_project-main/obj/Debug/net8.0/scopedcss/bundle/DBExplorer.Web.styles.css"
+      "OriginalItemSpec": "/home/babi/Desktop/Blazor_Project/obj/Debug/net8.0/scopedcss/bundle/DBExplorer.Web.styles.css"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/obj/Debug/net8.0/scopedcss/projectbundle/DBExplorer.Web.bundle.scp.css",
+      "Identity": "/home/babi/Desktop/Blazor_Project/obj/Debug/net8.0/scopedcss/projectbundle/DBExplorer.Web.bundle.scp.css",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Computed",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/obj/Debug/net8.0/scopedcss/projectbundle/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "DBExplorer.Web.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/home/babi/Desktop/mike/blezor_project-main/obj/Debug/net8.0/scopedcss/projectbundle/DBExplorer.Web.bundle.scp.css"
+      "OriginalItemSpec": "/home/babi/Desktop/Blazor_Project/obj/Debug/net8.0/scopedcss/projectbundle/DBExplorer.Web.bundle.scp.css"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/bootstrap/bootstrap.min.css",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/bootstrap/bootstrap.min.css",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/bootstrap/bootstrap.min.css.map",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/open-iconic/FONT-LICENSE",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/open-iconic/FONT-LICENSE",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/FONT-LICENSE"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.eot"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.otf"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.svg"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.ttf"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.woff"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/open-iconic/ICON-LICENSE",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/open-iconic/ICON-LICENSE",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/ICON-LICENSE"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/open-iconic/README.md",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/open-iconic/README.md",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/README.md"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/css/site.css",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/css/site.css",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/favicon.png",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/favicon.png",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot/favicon.png"
     },
     {
-      "Identity": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/js/site.js",
+      "Identity": "/home/babi/Desktop/Blazor_Project/wwwroot/js/site.js",
       "SourceId": "DBExplorer.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/babi/Desktop/mike/blezor_project-main/wwwroot/",
+      "ContentRoot": "/home/babi/Desktop/Blazor_Project/wwwroot/",
       "BasePath": "_content/DBExplorer.Web",
       "RelativePath": "js/site.js",
       "AssetKind": "All",

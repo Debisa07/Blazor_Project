@@ -109,6 +109,7 @@
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: hidden; /* Hide overflow */
     text-overflow: ellipsis; /* Add ellipsis to overflowed text */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
   }
 
     .nav-item button i {
@@ -122,6 +123,13 @@
       text-overflow: ellipsis;
       font-size: 0.75rem; /* Smaller font size for better alignment */
     }
+
+  .nav-item button:hover {
+    background-color: #242525; /* Vibrant blue background */
+    color: #ffffff; /* White text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
 
 /* Handle smaller font size when space is limited */
 @media (max-width: 768px) {
@@ -153,4 +161,13 @@
     height: calc(100vh - 3.5rem);
     overflow-y: auto;
   }
+}
+
+/* Additional styles for advanced UI */
+.sidebar {
+  background-color: #ffffff; /* White background for card view */
+  border: 1px solid #dee2e6; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 1rem; /* Inner padding */
 }
