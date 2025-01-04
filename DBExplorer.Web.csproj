@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.JSInterop" Version="8.0.10" />
     <PackageReference Include="Npgsql" Version="9.0.2" />
     <PackageReference Include="Oracle.ManagedDataAccess" Version="23.6.1" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.7.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.0" />
     <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
   </ItemGroup>

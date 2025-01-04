@@ -39,7 +39,7 @@ else
         <tbody>
           @foreach (var row in Data.Skip(1))
           {
-            <tr @ondblclick="() => AddRow()">
+            <tr>
               <td>
                 <input type="checkbox" @onchange="(e) => ToggleRowSelection(row, e.Value)" />
                 @if (EditedRowIndex.HasValue && EditedRowIndex == Data.IndexOf(row))
@@ -52,8 +52,8 @@ else
                 <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 8px;">
                   <input type="text" class="form-control"
                          value="@row[colIndex]"
-                         @onfocus="() => SetEditedRow(Data.IndexOf(row))"
-                         @oninput="(e) => UpdateCell(row, colIndex, e.Value.ToString())"
+                         @onfocus="() => OnStartTypingInRow(row, colIndex)"
+                         @oninput="(e) => HandleStartTyping(row, colIndex, e.Value?.ToString() ?? string.Empty)"
                          @onblur="() => FinishEditing()"
                          @onkeydown="(e) => HandleEnterAndArrowDown(e, row, colIndex)" />
                 </td>
@@ -167,5 +167,19 @@ else
         }
       }
     }
+  }
+
+  private void HandleStartTyping(List<string> row, int colIndex, string newValue)
+  {
+    // Trigger adding a new row when any character is typed (i.e., newValue is not empty)
+    if (Data != null && Data.LastOrDefault() == row && !string.IsNullOrWhiteSpace(newValue))
+    {
+      AddRow();
+    }
+  }
+
+  private void OnStartTypingInRow(List<string> row, int colIndex)
+  {
+    // Optional: Logic to handle focus, if necessary
   }
 }

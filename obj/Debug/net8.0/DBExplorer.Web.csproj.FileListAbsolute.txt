@@ -318,3 +318,9 @@ C:/Users/PC/source/repos/DBExplorer/DBExplorer.Web/obj/Debug/net8.0/ref/DBExplor
 /home/babi/Desktop/Blazor_Project/obj/Debug/net8.0/DBExplorer.Web.pdb
 /home/babi/Desktop/Blazor_Project/obj/Debug/net8.0/DBExplorer.Web.genruntimeconfig.cache
 /home/babi/Desktop/Blazor_Project/obj/Debug/net8.0/ref/DBExplorer.Web.dll
+/home/babi/Desktop/Blazor_Project/bin/Debug/net8.0/System.Diagnostics.PerformanceCounter.dll
+/home/babi/Desktop/Blazor_Project/bin/Debug/net8.0/System.DirectoryServices.Protocols.dll
+/home/babi/Desktop/Blazor_Project/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.dll
+/home/babi/Desktop/Blazor_Project/bin/Debug/net8.0/runtimes/linux/lib/net8.0/System.DirectoryServices.Protocols.dll
+/home/babi/Desktop/Blazor_Project/bin/Debug/net8.0/runtimes/osx/lib/net8.0/System.DirectoryServices.Protocols.dll
+/home/babi/Desktop/Blazor_Project/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.DirectoryServices.Protocols.dll
