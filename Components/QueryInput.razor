@@ -1,0 +1,48 @@
+﻿<div class="query-container">
+  <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 0;">
+    <h5 class="mb-0 tab-title me-5 text-dark" style="border-bottom: none; background-color: white; color: white; padding: 3px 5px;">
+      Get @DatabaseObjectName
+      <button class="btn btn-light me-2 btn-sm" style="font-size: 12px; padding: 2px 4px;" @onclick="CloseQuery">
+        <i class="fa fa-times"></i>
+      </button>
+    </h5>
+    <button class="btn execute-button d-flex align-items-center justify-content-center px-2 py-1"
+            @onclick="RunQuery"
+            style="border-top-left-radius: 6px; border-top-right-radius: 6px; background-color: #8c8c8c; color: white; border: none; font-size: 12px; padding: 0 2px; transition: background-color 0.3s ease; border-top: 6px;">
+      <i class="fa fa-bolt me-2" style="font-size: 14px;"></i> Execute
+    </button>
+
+  </div>
+  <textarea class="form-control mt-0" rows="5"
+            placeholder="Select * from @DatabaseObjectName"
+            @bind="Query"
+            style="border: none; resize: vertical; min-height: 100px; background-color: white; color: black; font-family: 'Courier New', monospace; margin-top: 0;">
+</textarea>
+
+
+</div>
+
+@code {
+  [Parameter] public string? DatabaseObjectName { get; set; }
+  [Parameter] public EventCallback<string> OnQueryRun { get; set; }
+
+  private string Query { get; set; } = string.Empty;
+  private void CloseQuery()
+  {
+    Query = string.Empty;
+  }
+
+  private async Task RunQuery()
+  {
+    await OnQueryRun.InvokeAsync(Query);
+  }
+
+  protected override async Task OnParametersSetAsync()
+  {
+    if (!string.IsNullOrWhiteSpace(Query))
+    {
+      await Task.Delay(1000);
+      await RunQuery();
+    }
+  }
+}

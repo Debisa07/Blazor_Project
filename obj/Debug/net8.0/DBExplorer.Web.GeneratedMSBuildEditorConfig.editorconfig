@@ -1,0 +1,79 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DBExplorer.Web
+build_property.RootNamespace = DBExplorer.Web
+build_property.ProjectDir = /home/babi/Desktop/mike/blezor_project-main/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/babi/Desktop/mike/blezor_project-main
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/babi/Desktop/mike/blezor_project-main/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/Components/ConfirmDelete.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Db25maXJtRGVsZXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/Components/Modal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Nb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/Components/SqlServerLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TcWxTZXJ2ZXJMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/Pages/ProceduresPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvY2VkdXJlc1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/Pages/TablesPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGFibGVzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/Pages/ViewsPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVmlld3NQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/Components/QueryInput.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9RdWVyeUlucHV0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-0x0jawff19
+
+[/home/babi/Desktop/mike/blezor_project-main/Components/TableView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UYWJsZVZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-tl01os7tso
+
+[/home/babi/Desktop/mike/blezor_project-main/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-bhx2e6qv8t
+
+[/home/babi/Desktop/mike/blezor_project-main/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-2skm4xe7di
+
+[/home/babi/Desktop/mike/blezor_project-main/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/babi/Desktop/mike/blezor_project-main/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,262 @@
+﻿@if (Data == null || Data.Count == 0)
+{
+  <div class="text-center">
+    <p class="text-dark">Loading data, please wait...</p>
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+}
+else
+{
+  <div class="table-container" style="top: @TableTopPosition; position: relative;">
+    <!-- Dragging and Delete/Add Buttons -->
+    <div class="drag-area bg-white"
+         @onmousedown="StartDrag"
+         @onmouseup="StopDrag"
+         @onmousemove="Drag"
+         style="cursor: move; display: flex; justify-content: start; align-items: center; padding: 10px; gap: 5px;">
+      <button class="btn btn-danger btn-sm d-flex align-items-center" @onclick="DeleteSelectedRows" style="padding: 2px 4px; font-size: 12px;">
+        <i class="fa fa-trash" style="margin-right: 5px; font-size: 8px;"></i> Delete
+      </button>
+      <button class="btn btn-success btn-sm d-flex align-items-center" @onclick="AddRow" style="padding: 2px 4px; font-size: 12px;">
+        <i class="fa fa-plus" style="margin-right: 5px; font-size: 8px;"></i> Add
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-responsive" style="max-height: 57vh; overflow-y: auto; overflow-x: auto;">
+      <table class="table table-bordered table-white" style="table-layout: auto;">
+        <thead>
+          <tr>
+            <th style="font-size: 12px;"></th>
+            @foreach (var col in Data[0])
+            {
+              <th style="font-size: 12px;">@col</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (var row in Data.Skip(1))
+          {
+            <tr>
+              <td>
+                <input type="checkbox" @onchange="(e) => ToggleRowSelection(row, e.Value)" />
+                @if (EditedRowIndex.HasValue && EditedRowIndex == Data.IndexOf(row))
+                {
+                  <i class="fa fa-pen fs-xs" style="margin-left: 5px; color: #1f1e1e; font-size: 8px"></i>
+                }
+              </td>
+              @for (int colIndex = 0; colIndex < row.Count; colIndex++)
+              {
+                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 8px;">
+                  <input type="text" class="form-control"
+                         value="@row[colIndex]"
+                         @onfocus="() => SetEditedRow(Data.IndexOf(row))"
+                         @oninput="(e) => UpdateCell(row, colIndex, e.Value.ToString())"
+                         @onblur="() => FinishEditing()"
+                         @onkeydown="(e) => HandleEnterAndArrowDown(e, row, colIndex)" />
+                </td>
+              }
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+}
+
+@code {
+  [Parameter] public List<List<string>>? Data { get; set; }
+  private bool isDragging = false;
+  private double initialMouseY;
+  private string TableTopPosition = "0px";
+  private List<List<string>> SelectedRows = new();
+  private int? EditedRowIndex { get; set; } = null;
+
+  private bool isSelecting = false; // To track if we are in selection mode
+  private double selectionStartY; // Starting Y position of the selection
+  private double selectionEndY; // Ending Y position of the selection
+
+  private void StartSelect(MouseEventArgs e)
+  {
+    isSelecting = true;
+    selectionStartY = e.ClientY;
+    SelectedRows.Clear(); // Clear previous selections
+    StateHasChanged();
+  }
+
+  private void StopSelect(MouseEventArgs e)
+  {
+    isSelecting = false;
+    SelectRowsInRectangle(); // Call method to select rows based on rectangle
+    StateHasChanged();
+  }
+
+  private void Select(MouseEventArgs e)
+  {
+    if (isSelecting)
+    {
+      selectionEndY = e.ClientY;
+      StateHasChanged(); // Refresh UI to show selection rectangle
+    }
+  }
+
+  private void SelectRowsInRectangle()
+  {
+    double minY = Math.Min(selectionStartY, selectionEndY);
+    double maxY = Math.Max(selectionStartY, selectionEndY);
+
+    foreach (var row in Data.Skip(1))
+    {
+      var rowIndex = Data.IndexOf(row);
+      var rowTop = 40 + (rowIndex * 30); // Adjust this based on your row height
+      var rowBottom = rowTop + 30; // Adjust this based on your row height
+
+      if (rowBottom >= minY && rowTop <= maxY)
+      {
+        if (!SelectedRows.Contains(row))
+        {
+          SelectedRows.Add(row);
+        }
+      }
+      else
+      {
+        SelectedRows.Remove(row);
+      }
+    }
+  }
+
+  // Update a specific cell's value
+  private void UpdateCell(List<string> row, int colIndex, string newValue)
+  {
+    if (Data == null || row == null || colIndex < 0 || colIndex >= row.Count) return;
+    row[colIndex] = newValue;
+    EditedRowIndex = Data.IndexOf(row);
+    StateHasChanged();
+  }
+
+  private void SetEditedRow(int index)
+  {
+    if (Data == null) return;
+    EditedRowIndex = index;
+    if (index == Data.Count - 1)
+    {
+      AddRow();
+    } // Add a new row if the last row is being edited
+    StateHasChanged();
+  }
+
+  private void FinishEditing()
+  {
+    EditedRowIndex = null;
+    StateHasChanged();
+  }
+
+  // Start dragging
+  private void StartDrag(MouseEventArgs e)
+  {
+    isDragging = true;
+    initialMouseY = e.ClientY;
+  }
+
+  // Handle dragging
+  private void Drag(MouseEventArgs e)
+  {
+    if (isDragging)
+    {
+      var deltaY = e.ClientY - initialMouseY;
+      initialMouseY = e.ClientY;
+
+      var currentTop = double.TryParse(TableTopPosition.Replace("px", ""), out var result) ? result : 0;
+      TableTopPosition = $"{currentTop + deltaY}px";
+    }
+  }
+
+  // Stop dragging
+  private void StopDrag(MouseEventArgs e)
+  {
+    isDragging = false;
+  }
+
+  // Toggle row selection
+  private void ToggleRowSelection(List<string> row, object? isChecked)
+  {
+    if (isChecked is true)
+    {
+      SelectedRows.Add(row);
+    }
+    else
+    {
+      SelectedRows.Remove(row);
+    }
+  }
+
+  // Delete selected rows
+  private void DeleteSelectedRows()
+  {
+    if (Data != null)
+    {
+      Data = Data.Where(row => !SelectedRows.Contains(row)).ToList();
+      SelectedRows.Clear();
+    }
+  }
+
+  // Add a new row
+  private void AddRow()
+  {
+    if (Data == null || Data.Count == 0) return;
+    var columnCount = Data[0].Count;
+    var newRow = Enumerable.Repeat("null", columnCount).ToList();
+    Data.Add(newRow);
+    StateHasChanged();
+  }
+
+  // when the user leaves any cell in the last row, add a new row
+  private void AddRowOnLeave(List<string> row)
+  {
+    if (Data == null || Data.Count == 0) return;
+    if (Data.IndexOf(row) == Data.Count - 1 && row.Any(cell => !string.IsNullOrWhiteSpace(cell)))
+    {
+      AddRow();
+    }
+  }
+
+  private void HandleEnterAndArrowDown(KeyboardEventArgs e, List<string> row, int colIndex)
+  {
+    if (e.Key == "Enter" || e.Key == "ArrowDown" || e.Key == "Tab") // Check for Enter, Down Arrow, or Tab key
+    {
+      var currentRowIndex = Data?.IndexOf(row) ?? -1;
+      if (currentRowIndex == -1) return;
+
+      // If we're in the last column of the current row, move to the next row
+      if (colIndex == row.Count - 1)
+      {
+        if (currentRowIndex == Data.Count - 1) // Last row
+        {
+          // Add a new row if we're on the last row
+          AddRow();
+          StateHasChanged();
+          // Move focus to the same column in the new row
+          SetEditedRow(Data.Count - 1); // Move to the new row
+        }
+        else
+        {
+          // Move focus to the next row, same column
+          var nextRow = Data[currentRowIndex + 1];
+          SetEditedRow(currentRowIndex + 1); // Move to the next row
+        }
+      }
+      else
+      {
+        // If not in the last column, just move to the next column
+        var nextColIndex = colIndex + 1;
+        var nextRow = Data[currentRowIndex];
+        // Update the edited row and column
+        SetEditedRow(currentRowIndex);
+        // Focus the next column in the current row
+        StateHasChanged();
+      }
+    }
+  }
+}

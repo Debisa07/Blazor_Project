@@ -1,0 +1,133 @@
+﻿@page "/tables/{TableName}"
+<div class="container-fluid p-0">
+  <QueryInput DatabaseObjectName="@TableName" OnQueryRun="HandleQueryRun" />
+  <TableView Data="@TableData" />
+</div>
+
+<style>
+  .table-container {
+    margin: 20px 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .table thead {
+    background-color: #009879;
+    color: #ffffff;
+  }
+
+  .table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+  }
+
+  .table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  .table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+
+  .table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  }
+
+  .marked-cell {
+    background-color: yellow;
+  }
+</style>
+
+@code {
+  [Parameter] public string? TableName { get; set; }
+  private List<List<string>> TableData { get; set; } = new();
+
+  private async Task HandleQueryRun(string query)
+  {
+    await Task.Delay(1000);
+    var result = new List<List<string>>();
+
+    result.Add(new List<string>
+    {
+      "First Name", "Last Name", "Email", "Phone", "City",
+      "State", "Zip Code", "Country", "Company", "Job", "Salary", "Hire Date", "Termination Date"
+    });
+
+    // dummy data
+    for (int i = 1; i <= 15; i++)
+    {
+      result.Add(new List<string>
+      {
+        $"FirstName{i}",
+        $"LastName{i}",
+        $"email{i}@example.com",
+        $"555-010{i:00}",
+        $"City{i}",
+        $"State{i}",
+        $"Zip{i:00000}",
+        $"Country{i}",
+        $"Company{i}",
+        $"Job{i}",
+        $"$100,000",
+        $"1/1/202{i}",
+        $"1/1/202{i + 1}"
+      });
+    }
+
+    TableData = result;
+  }
+
+  protected override async Task OnParametersSetAsync()
+  {
+    if (!string.IsNullOrEmpty(TableName))
+    {
+      await Task.Delay(1000);
+      await LoadDataForTable(TableName);
+    }
+  }
+
+  private async Task LoadDataForTable(string tableName)
+  {
+    await Task.Delay(1000);
+    var result = new List<List<string>>();
+
+    result.Add(new List<string>
+    {
+      "First Name", "Last Name", "Email", "Phone", "City",
+      "State", "Zip Code", "Country", "Company", "Job", "Salary", "Hire Date", "Termination Date"
+    });
+
+    for (int i = 1; i <= 15; i++)
+    {
+      result.Add(new List<string>
+      {
+        $"FirstName{i}",
+        $"LastName{i}",
+        $"email{i}@example.com",
+        $"555-010{i:00}",
+        $"City{i}",
+        $"State{i}",
+        $"Zip{i:00000}",
+        $"Country{i}",
+        $"Company{i}",
+        $"Job{i}",
+        $"$100,000",
+        $"1/1/202{i}",
+        $"1/1/202{i + 1}"
+      });
+    }
+
+    TableData = result;
+  }
+}

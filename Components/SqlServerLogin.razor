@@ -1,0 +1,75 @@
+@page "/sql-server-login"
+
+<EditForm Model="@loginModel">
+    <div class="card shadow" style="max-width: 500px; margin: 2rem auto;">
+        <div class="card-header bg-primary text-white text-center">
+            <h5>SQL Server</h5>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="serverType" class="form-label">Server type</label>
+                <select id="serverType" class="form-select" @bind="loginModel.ServerType">
+                    <option>Database Engine</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="serverName" class="form-label">Server name</label>
+                <input type="text" id="serverName" class="form-control" @bind="loginModel.ServerName" />
+            </div>
+
+            <div class="mb-3">
+                <label for="authentication" class="form-label">Authentication</label>
+                <select id="authentication" class="form-select" @bind="loginModel.Authentication">
+                    <option>Windows Authentication</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="userName" class="form-label">User name</label>
+                <input type="text" id="userName" class="form-control" disabled @bind="loginModel.UserName" />
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" disabled @bind="loginModel.Password" />
+            </div>
+
+            <fieldset class="border rounded p-3">
+                <legend class="float-none w-auto">Connection Security</legend>
+
+                <div class="mb-3">
+                    <label for="encryption" class="form-label">Encryption</label>
+                    <select id="encryption" class="form-select" @bind="loginModel.Encryption">
+                        <option>Mandatory</option>
+                    </select>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="trustCertificate" class="form-check-input" @bind="loginModel.TrustCertificate" />
+                    <label for="trustCertificate" class="form-check-label">Trust server certificate</label>
+                </div>
+            </fieldset>
+
+            <div class="d-flex justify-content-end mt-3">
+                <button type="button" class="btn btn-primary me-2">Connect</button>
+                <button type="button" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    private LoginModel loginModel = new LoginModel();
+
+    public class LoginModel
+    {
+        public string ServerType { get; set; } = "Database Engine";
+        public string ServerName { get; set; } = "DESKTOP-26A9125\\SQLExpress";
+        public string Authentication { get; set; } = "Windows Authentication";
+        public string UserName { get; set; } = "DESKTOP-26A9125\\PC";
+        public string Password { get; set; } = string.Empty;
+        public string Encryption { get; set; } = "Mandatory";
+        public bool TrustCertificate { get; set; } = true;
+    }
+}

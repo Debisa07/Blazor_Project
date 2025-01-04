@@ -1,0 +1,50 @@
+.table-container[b-tl01os7tso] {
+  width: 100%;
+  border: 0.002rem solid #ccc; /* Gray border for the container */
+  background-color: #e0e0e0; /* Background color of the container */
+  position: relative;
+}
+
+.table-responsive[b-tl01os7tso] {
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.table[b-tl01os7tso] {
+  width: 100%;
+  border-collapse: collapse; /* Collapse borders into a single line */
+  background-color: white; /* Set the background of the table to white */
+}
+
+.table th[b-tl01os7tso], .table td[b-tl01os7tso] {
+  padding: 2px 4px; /* Smaller padding for more compact appearance */
+  text-align: left;
+  border: 1px solid #ccc; /* Light gray border for cells */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Style for input elements inside the table */
+input.form-control[b-tl01os7tso] {
+  background-color: white !important;
+  color: black !important;
+  border: none !important; /* Remove border */
+  outline: none !important; /* Remove outline */
+  box-shadow: none !important; /* Remove shadow */
+  border-radius: 0 !important; /* No border radius for a flat look */
+  padding: 1px;
+  font-size: 11px;
+}
+
+input.form-control:focus[b-tl01os7tso] {
+  background-color: white !important; /* Keep background white */
+  color: black !important;
+  border: none !important; /* No border on focus */
+  outline: none !important; /* No outline on focus */
+  box-shadow: none !important; /* No shadow on focus */
+}
+
+.selected-row[b-tl01os7tso] {
+  background-color: #d3d3d3 !important;
+}

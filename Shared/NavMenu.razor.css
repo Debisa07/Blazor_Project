@@ -1,0 +1,156 @@
+.navbar-brand {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #000;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.navbar-brand i {
+  font-size: 1rem;
+  color: #000;
+  margin-right: 0.5rem;
+}
+
+.navbar-toggler {
+  background-color: #f2f3f5;
+}
+
+.top-row {
+  background-color: #e0e0e0;
+  height: 3.5rem;
+}
+
+.oi {
+  width: 2rem;
+  font-size: 1.1rem;
+  vertical-align: text-top;
+  top: -2px;
+}
+
+.nav-item button i.bi-table {
+  font-size: 0.75rem; /* Smaller table icon */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis to overflowed text */
+}
+
+/* Remove default focus shadow and border for nav links */
+.nav-link:focus,
+.nav-link:active,
+.btn:focus,
+.btn:active {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Custom styles for active button (background color change) */
+.nav-item button.active,
+.nav-item button:focus,
+.nav-item button:active {
+  background-color: #c8e6c9; /* Light green background when active */
+  color: #1b5e20; /* Dark green text when active */
+}
+
+/* Custom hover effect for better user experience */
+.nav-link:hover,
+.btn:hover {
+  background-color: #e0f7fa; /* Light cyan hover background */
+  color: #004d40; /* Dark cyan hover text */
+}
+
+/* Style for selected table */
+.selected-table {
+  background-color: #c8e6c9 !important;
+  color: #1b5e20 !important;
+  font-weight: bold;
+}
+
+.nav-item {
+  font-size: 0.8rem; /* Smaller font size for nav items */
+  padding: 0.2rem 0.5rem; /* Reduced padding for compact look */
+}
+
+  .nav-item:first-of-type {
+    padding-top: 0.8rem;
+  }
+
+  .nav-item:last-of-type {
+    padding-bottom: 0.8rem;
+  }
+
+  .nav-item ::deep a {
+    color: #424242; /* Neutral text color */
+    border-radius: 4px;
+    height: 2.4rem; /* Reduced height for compact links */
+    display: flex;
+    align-items: center;
+    line-height: 2.4rem; /* Adjusted line height for compact links */
+  }
+
+    .nav-item ::deep a.active {
+      background-color: #c8e6c9; /* Light green active background */
+      color: #1b5e20; /* Dark green active text */
+    }
+
+    .nav-item ::deep a:hover {
+      background-color: #e0f7fa; /* Light cyan hover background */
+      color: #004d40; /* Dark cyan hover text */
+    }
+
+  /* For smaller tables, views, and stored procedures */
+  .nav-item button {
+    font-size: 0.75rem; /* Smaller font size for buttons */
+    padding: 0.2rem 0.5rem; /* Reduced padding inside buttons */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis to overflowed text */
+  }
+
+    .nav-item button i {
+      font-size: 0.8rem; /* Smaller icons */
+      margin-right: 0.5rem;
+    }
+
+    .nav-item button span {
+      white-space: nowrap; /* Prevent text from wrapping */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.75rem; /* Smaller font size for better alignment */
+    }
+
+/* Handle smaller font size when space is limited */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 0.75rem; /* Smaller font size for mobile */
+  }
+
+    .btn span {
+      font-size: 0.7rem; /* Even smaller font for the span */
+    }
+
+  .nav-item button i {
+    font-size: 0.7rem; /* Adjust icon size for small screens */
+  }
+}
+
+@media (min-width: 641px) {
+  .navbar-toggler {
+    display: none;
+  }
+
+  .collapse {
+    /* Never collapse the sidebar for wide screens */
+    display: block;
+  }
+
+  .nav-scrollable {
+    /* Allow sidebar to scroll for tall menus */
+    height: calc(100vh - 3.5rem);
+    overflow-y: auto;
+  }
+}

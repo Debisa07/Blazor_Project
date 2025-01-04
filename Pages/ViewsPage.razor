@@ -1,0 +1,38 @@
+﻿@page "/views/{ViewName}"
+<QueryInput DatabaseObjectName="@ViewName" OnQueryRun="HandleQueryRun" />
+
+@code {
+  [Parameter] public string? ViewName { get; set; }
+  private List<List<string>> ViewData { get; set; } = new();
+  private async Task HandleQueryRun(string query)
+  {
+    // TODO: This method will be used to handle the query execution as well as data fetching for selected table
+    var result = new List<List<string>>();
+
+    result.Add(new List<string>
+    {
+      "First Name", "Last Name", "Email", "Phone", "City",
+      "State", "Zip Code", "Country", "Company", "Job Title"
+    });
+
+    // dummy data
+    for (int i = 1; i <= 10; i++)
+    {
+      result.Add(new List<string>
+      {
+        $"FirstName{i}",
+        $"LastName{i}",
+        $"email{i}@example.com",
+        $"555-010{i:00}",
+        $"City{i}",
+        $"State{i}",
+        $"Zip{i:00000}",
+        $"Country{i}",
+        $"Company{i}",
+        $"Job{i}"
+      });
+    }
+
+    ViewData = result;
+  }
+}

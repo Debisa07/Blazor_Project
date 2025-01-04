@@ -1,0 +1,46 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>DBExplorer</PageTitle>
+
+<div class="page d-flex">
+    
+        <NavMenu />
+
+
+    <main class="flex-grow-1 bg-light text-dark p-4">
+        <div class="top-row px-4 text-dark bg-primary text-white rounded mb-3">
+            <h1 class="h3">Dashboard</h1>
+        </div>
+
+        <article class="content bg-white p-4 rounded shadow-sm">
+            @Body
+        </article>
+    </main>
+</div>
+
+<style>
+    .sidebar {
+        width: 250px;
+        min-height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .page {
+        margin-left: 250px;
+    }
+
+    .top-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .content {
+        margin-top: 1rem;
+    }
+</style>

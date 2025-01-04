@@ -1,0 +1,53 @@
+﻿.query-container {
+  border: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+textarea.form-control {
+  background-color: white;
+  color: white;
+  border: none;
+  border-radius: 0;
+  resize: vertical;
+  min-height: 100px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+  textarea.form-control:focus {
+    background-color: white;
+    box-shadow: none !important;
+    color: white;
+    border: none !important;
+    outline: none;
+  }
+
+.execute-button {
+  background-color: #14AE5C; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 6px; /* Spacing */
+  font-size: 12px; 
+  font-weight: bold;
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+  .execute-button:hover {
+    background-color: #12a051; /* Slightly darker green on hover */
+    transform: scale(1.05); /* Subtle enlarge effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+
+  .execute-button i {
+    font-size: 16px; /* Slightly larger icon */
+  }
+
+.tab-title {
+  font-size: 14px; 
+  font-weight: bold; 
+  margin: 0;
+  padding: 2px;
+}
+

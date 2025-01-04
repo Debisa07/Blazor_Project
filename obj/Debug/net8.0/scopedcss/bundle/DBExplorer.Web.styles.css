@@ -1,0 +1,338 @@
+/* _content/DBExplorer.Web/Components/QueryInput.razor.rz.scp.css */
+.query-container[b-0x0jawff19] {
+  border: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+textarea.form-control[b-0x0jawff19] {
+  background-color: white;
+  color: white;
+  border: none;
+  border-radius: 0;
+  resize: vertical;
+  min-height: 100px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+  textarea.form-control:focus[b-0x0jawff19] {
+    background-color: white;
+    box-shadow: none !important;
+    color: white;
+    border: none !important;
+    outline: none;
+  }
+
+.execute-button[b-0x0jawff19] {
+  background-color: #14AE5C; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 6px; /* Spacing */
+  font-size: 12px; 
+  font-weight: bold;
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+  .execute-button:hover[b-0x0jawff19] {
+    background-color: #12a051; /* Slightly darker green on hover */
+    transform: scale(1.05); /* Subtle enlarge effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+
+  .execute-button i[b-0x0jawff19] {
+    font-size: 16px; /* Slightly larger icon */
+  }
+
+.tab-title[b-0x0jawff19] {
+  font-size: 14px; 
+  font-weight: bold; 
+  margin: 0;
+  padding: 2px;
+}
+
+/* _content/DBExplorer.Web/Components/TableView.razor.rz.scp.css */
+.table-container[b-tl01os7tso] {
+  width: 100%;
+  border: 0.002rem solid #ccc; /* Gray border for the container */
+  background-color: #e0e0e0; /* Background color of the container */
+  position: relative;
+}
+
+.table-responsive[b-tl01os7tso] {
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.table[b-tl01os7tso] {
+  width: 100%;
+  border-collapse: collapse; /* Collapse borders into a single line */
+  background-color: white; /* Set the background of the table to white */
+}
+
+.table th[b-tl01os7tso], .table td[b-tl01os7tso] {
+  padding: 2px 4px; /* Smaller padding for more compact appearance */
+  text-align: left;
+  border: 1px solid #ccc; /* Light gray border for cells */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Style for input elements inside the table */
+input.form-control[b-tl01os7tso] {
+  background-color: white !important;
+  color: black !important;
+  border: none !important; /* Remove border */
+  outline: none !important; /* Remove outline */
+  box-shadow: none !important; /* Remove shadow */
+  border-radius: 0 !important; /* No border radius for a flat look */
+  padding: 1px;
+  font-size: 11px;
+}
+
+input.form-control:focus[b-tl01os7tso] {
+  background-color: white !important; /* Keep background white */
+  color: black !important;
+  border: none !important; /* No border on focus */
+  outline: none !important; /* No outline on focus */
+  box-shadow: none !important; /* No shadow on focus */
+}
+
+.selected-row[b-tl01os7tso] {
+  background-color: #d3d3d3 !important;
+}
+/* _content/DBExplorer.Web/Shared/MainLayout.razor.rz.scp.css */
+.page[b-bhx2e6qv8t] {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main[b-bhx2e6qv8t] {
+  flex: 1;
+  overflow: hidden;
+  background-color: #e0e0e0 !important;
+}
+
+.sidebar[b-bhx2e6qv8t] {
+  background-color: #e0e0e0;
+  overflow-x: auto;
+}
+
+.top-row[b-bhx2e6qv8t] {
+  background-color: #e0e0e0;
+  justify-content: flex-end;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+    .top-row[b-bhx2e6qv8t]  a, .top-row .btn-link[b-bhx2e6qv8t] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child[b-bhx2e6qv8t] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-bhx2e6qv8t] {
+        display: none;
+    }
+
+    .top-row.auth[b-bhx2e6qv8t] {
+        justify-content: space-between;
+    }
+
+    .top-row a[b-bhx2e6qv8t], .top-row .btn-link[b-bhx2e6qv8t] {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-bhx2e6qv8t] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-bhx2e6qv8t] {
+        width: 270px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-bhx2e6qv8t] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row[b-bhx2e6qv8t], article[b-bhx2e6qv8t] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* _content/DBExplorer.Web/Shared/NavMenu.razor.rz.scp.css */
+.navbar-brand[b-2skm4xe7di] {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #000;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.navbar-brand i[b-2skm4xe7di] {
+  font-size: 1rem;
+  color: #000;
+  margin-right: 0.5rem;
+}
+
+.navbar-toggler[b-2skm4xe7di] {
+  background-color: #f2f3f5;
+}
+
+.top-row[b-2skm4xe7di] {
+  background-color: #e0e0e0;
+  height: 3.5rem;
+}
+
+.oi[b-2skm4xe7di] {
+  width: 2rem;
+  font-size: 1.1rem;
+  vertical-align: text-top;
+  top: -2px;
+}
+
+.nav-item button i.bi-table[b-2skm4xe7di] {
+  font-size: 0.75rem; /* Smaller table icon */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis to overflowed text */
+}
+
+/* Remove default focus shadow and border for nav links */
+.nav-link:focus[b-2skm4xe7di],
+.nav-link:active[b-2skm4xe7di],
+.btn:focus[b-2skm4xe7di],
+.btn:active[b-2skm4xe7di] {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Custom styles for active button (background color change) */
+.nav-item button.active[b-2skm4xe7di],
+.nav-item button:focus[b-2skm4xe7di],
+.nav-item button:active[b-2skm4xe7di] {
+  background-color: #c8e6c9; /* Light green background when active */
+  color: #1b5e20; /* Dark green text when active */
+}
+
+/* Custom hover effect for better user experience */
+.nav-link:hover[b-2skm4xe7di],
+.btn:hover[b-2skm4xe7di] {
+  background-color: #e0f7fa; /* Light cyan hover background */
+  color: #004d40; /* Dark cyan hover text */
+}
+
+/* Style for selected table */
+.selected-table[b-2skm4xe7di] {
+  background-color: #c8e6c9 !important;
+  color: #1b5e20 !important;
+  font-weight: bold;
+}
+
+.nav-item[b-2skm4xe7di] {
+  font-size: 0.8rem; /* Smaller font size for nav items */
+  padding: 0.2rem 0.5rem; /* Reduced padding for compact look */
+}
+
+  .nav-item:first-of-type[b-2skm4xe7di] {
+    padding-top: 0.8rem;
+  }
+
+  .nav-item:last-of-type[b-2skm4xe7di] {
+    padding-bottom: 0.8rem;
+  }
+
+  .nav-item[b-2skm4xe7di]  a {
+    color: #424242; /* Neutral text color */
+    border-radius: 4px;
+    height: 2.4rem; /* Reduced height for compact links */
+    display: flex;
+    align-items: center;
+    line-height: 2.4rem; /* Adjusted line height for compact links */
+  }
+
+    .nav-item[b-2skm4xe7di]  a.active {
+      background-color: #c8e6c9; /* Light green active background */
+      color: #1b5e20; /* Dark green active text */
+    }
+
+    .nav-item[b-2skm4xe7di]  a:hover {
+      background-color: #e0f7fa; /* Light cyan hover background */
+      color: #004d40; /* Dark cyan hover text */
+    }
+
+  /* For smaller tables, views, and stored procedures */
+  .nav-item button[b-2skm4xe7di] {
+    font-size: 0.75rem; /* Smaller font size for buttons */
+    padding: 0.2rem 0.5rem; /* Reduced padding inside buttons */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis to overflowed text */
+  }
+
+    .nav-item button i[b-2skm4xe7di] {
+      font-size: 0.8rem; /* Smaller icons */
+      margin-right: 0.5rem;
+    }
+
+    .nav-item button span[b-2skm4xe7di] {
+      white-space: nowrap; /* Prevent text from wrapping */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.75rem; /* Smaller font size for better alignment */
+    }
+
+/* Handle smaller font size when space is limited */
+@media (max-width: 768px) {
+  .btn[b-2skm4xe7di] {
+    font-size: 0.75rem; /* Smaller font size for mobile */
+  }
+
+    .btn span[b-2skm4xe7di] {
+      font-size: 0.7rem; /* Even smaller font for the span */
+    }
+
+  .nav-item button i[b-2skm4xe7di] {
+    font-size: 0.7rem; /* Adjust icon size for small screens */
+  }
+}
+
+@media (min-width: 641px) {
+  .navbar-toggler[b-2skm4xe7di] {
+    display: none;
+  }
+
+  .collapse[b-2skm4xe7di] {
+    /* Never collapse the sidebar for wide screens */
+    display: block;
+  }
+
+  .nav-scrollable[b-2skm4xe7di] {
+    /* Allow sidebar to scroll for tall menus */
+    height: calc(100vh - 3.5rem);
+    overflow-y: auto;
+  }
+}

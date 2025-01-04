@@ -1,0 +1,217 @@
+﻿@inject DatabaseService DatabaseService
+@inject NavigationManager NavigationManager
+
+<!-- Sidebar Navigation -->
+<div class="@NavMenuCssClass sidebar bg-light text-dark" style="width: 250px; height: 100vh; position: fixed; top: 0; left: 0;">
+  <nav class="nav flex-column ps-3">
+    <div class="nav-item text-start mt-3">
+      <h6 class="text-dark fw-bold ms-3">Databases</h6>
+    </div>
+    <div class="nav-item text-start mb-3">
+      <a class="navbar-brand text-dark" href="#">
+        <i class="fas fa-database me-2"></i> 
+        DBExplorer
+      </a>
+    </div>
+    @foreach (var database in Databases)
+    {
+      <div class="nav-item position-relative mb-2">
+        <!-- Database Node -->
+        <button class="btn w-100 text-start text-dark bg-white border-0" @onclick="() => ToggleDatabase(database)">
+          <i class="@GetChevronClass(isDatabaseExpanded && selectedDatabase == database) fs-6 me-1"></i>
+          <i class="bi bi-database fs-6"></i>
+          <span class="ms-1">@database</span>
+        </button>
+
+        @if (isDatabaseExpanded && selectedDatabase == database)
+        {
+          <!-- Nested Tables -->
+          <div class="ms-4">
+            <button class="btn w-100 text-start text-dark bg-white border-0" @onclick="ToggleTables">
+              <i class="@GetChevronClass(showTables) fs-6 me-2"></i>
+              <i class="bi bi-table fs-7"></i>
+              <span class="ms-2">Tables</span>
+            </button>
+            @if (showTables)
+            {
+              <div class="nav flex-column ms-4">
+                @foreach (var table in Tables)
+                {
+                  <div class="position-relative mb-1">
+                    <button class="btn w-100 text-start text-dark bg-white border-0 @(selectedTable == table ? "fw-bold bg-secondary" : "")"
+                            @onclick="() => SelectTable(table)">
+                      <i class="bi bi-list fs-7 me-1"></i>
+                      <span class="ms-1">@table</span>
+                    </button>
+                    <button class="btn btn-link position-absolute top-0 end-0 text-dark" @onclick="() => ToggleContextMenu(table)">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                    @if (contextMenuVisible && contextMenuItem == table)
+                    {
+                      <div class="context-menu position-absolute bg-white border rounded p-2 shadow" style="right: 0; top: 100%; background-color: white;">
+                        <button class="btn btn-link text-start w-100" @onclick="() => EditItem(table)">Edit</button>
+                        <button class="btn btn-link text-start w-100" @onclick="() => DeleteItem(table)">Delete</button>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+            }
+          </div>
+
+          <!-- Nested Views -->
+          <div class="ms-4">
+            <button class="btn w-100 text-start text-dark bg-white border-0" @onclick="ToggleViews">
+              <i class="@GetChevronClass(showViews) fs-6 me-2"></i>
+              <i class="bi bi-layout-split fs-7"></i>
+              <span class="ms-2">Views</span>
+            </button>
+            @if (showViews)
+            {
+              <div class="nav flex-column ms-4">
+                @foreach (var view in Views)
+                {
+                  <div class="position-relative mb-1">
+                    <button class="btn w-100 text-start text-dark bg-white border-0 @(selectedView == view ? "fw-bold bg-secondary" : "")"
+                            @onclick="() => SelectView(view)">
+                      <i class="bi bi-columns fs-7 me-1"></i>
+                      <span class="ms-1">@view</span>
+                    </button>
+                    <button class="btn btn-link position-absolute top-0 end-0 text-dark" @onclick="() => ToggleContextMenu(view)">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                    @if (contextMenuVisible && contextMenuItem == view)
+                    {
+                      <div class="context-menu position-absolute bg-white border rounded p-2 shadow" style="right: 0; top: 100%; background-color: white;">
+                        <button class="btn btn-link text-start w-100" @onclick="() => EditItem(view)">Edit</button>
+                        <button class="btn btn-link text-start w-100" @onclick="() => DeleteItem(view)">Delete</button>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+            }
+          </div>
+
+          <!-- Nested Stored Procedures -->
+          <div class="ms-4">
+            <button class="btn w-100 text-start text-dark bg-white border-0" @onclick="ToggleProcedures">
+              <i class="@GetChevronClass(showProcedures) fs-6 me-2"></i>
+              <i class="bi bi-file-earmark-code fs-7"></i>
+              <span class="ms-2">Stored Procedures</span>
+            </button>
+            @if (showProcedures)
+            {
+              <div class="nav flex-column ms-4">
+                @foreach (var procedure in Procedures)
+                {
+                  <div class="position-relative mb-1">
+                    <button class="btn w-100 text-start text-dark bg-white border-0 @(selectedProcedure == procedure ? "fw-bold bg-secondary" : "")"
+                            @onclick="() => SelectProcedure(procedure)">
+                      <i class="bi bi-braces fs-7 me-1"></i>
+                      <span class="ms-1">@procedure</span>
+                    </button>
+                    <button class="btn btn-link position-absolute top-0 end-0 text-dark" @onclick="() => ToggleContextMenu(procedure)">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                    @if (contextMenuVisible && contextMenuItem == procedure)
+                    {
+                      <div class="context-menu position-absolute bg-white border rounded p-2 shadow" style="right: 0; top: 100%; background-color: white;">
+                        <button class="btn btn-link text-start w-100" @onclick="() => EditItem(procedure)">Edit</button>
+                        <button class="btn btn-link text-start w-100" @onclick="() => DeleteItem(procedure)">Delete</button>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        }
+      </div>
+    }
+    <ul class="nav flex-column mt-3">
+      <li class="nav-item px-3">
+        <NavLink class="nav-link text-dark" href="sql-server-login">
+          <span class="oi oi-cloud-download" aria-hidden="true"></span> SQL Server Login
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+@code {
+  private bool collapseNavMenu = false;
+  private bool isDatabaseExpanded = false;
+  private bool showTables = false;
+  private bool showViews = false;
+  private bool showProcedures = false;
+  private bool contextMenuVisible = false;
+  private string? contextMenuItem;
+
+  private string? selectedDatabase;
+  private string? selectedTable;
+  private string? selectedView;
+  private string? selectedProcedure;
+
+  private List<string> Databases = new List<string>();
+  private List<string> Tables = new List<string>();
+  private List<string> Views = new List<string>();
+  private List<string> Procedures = new List<string>();
+
+  private string? NavMenuCssClass => collapseNavMenu ? "d-none" : null;
+
+  protected override async Task OnInitializedAsync()
+  {
+    Databases = await DatabaseService.GetDatabases();
+  }
+
+  private string GetChevronClass(bool isExpanded)
+  {
+    return isExpanded ? "bi-chevron-down" : "bi-chevron-right";
+  }
+
+  private void ToggleNavMenu() => collapseNavMenu = !collapseNavMenu;
+
+  private async Task ToggleDatabase(string database)
+  {
+    selectedDatabase = database;
+    if (!isDatabaseExpanded)
+    {
+      Tables = await DatabaseService.GetTables(database);
+      Views = await DatabaseService.GetViews(database);
+      Procedures = await DatabaseService.GetProcedures(database);
+    }
+    isDatabaseExpanded = !isDatabaseExpanded;
+    StateHasChanged();
+  }
+
+  private void ToggleTables() => showTables = !showTables;
+
+  private void ToggleViews() => showViews = !showViews;
+
+  private void ToggleProcedures() => showProcedures = !showProcedures;
+
+  private void SelectTable(string table) => NavigationManager.NavigateTo($"/tables/{table}");
+
+  private void SelectView(string view) => NavigationManager.NavigateTo($"/views/{view}");
+
+  private void SelectProcedure(string procedure) => NavigationManager.NavigateTo($"/procedures/{procedure}");
+
+  private void ToggleContextMenu(string item)
+  {
+    contextMenuVisible = !contextMenuVisible;
+    contextMenuItem = item;
+  }
+
+  private void EditItem(string item)
+  {
+    // Implement edit functionality
+    contextMenuVisible = false;
+  }
+
+  private void DeleteItem(string item)
+  {
+    // Implement delete functionality
+    contextMenuVisible = false;
+  }
+}
